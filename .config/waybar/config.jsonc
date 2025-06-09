@@ -3,10 +3,12 @@
   "spacing": 3,
   "modules-left": [
     "mpris",
-    "hyprland/window"
+    "hyprland/window",
+    "sway/window"
   ],
   "modules-center": [
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "sway/workspaces"
   ],
   "modules-right": [
     "idle_inhibitor",
@@ -92,9 +94,9 @@
     "show-special": true
   },
   "mpris": {
-    "player": "yesplaymusic",
     "format": "{status_icon} {artist} - {title} {position}/{length}",
-    "{title}.len": 15,
+    "artist-len": 40,
+    "title-len": 40,
     "interval": 1,
     "status-icons": {
       "default": "⏸",

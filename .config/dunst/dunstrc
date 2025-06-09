@@ -29,7 +29,7 @@
 
     # The height of a single notification, excluding the frame.
     # dynamic height from 0 to 300
-    height = 160
+    height = 200
     # constant height of 300
     # height = 300
     # NOTE: Dunst from version 1.11 and older don't support dynamic height
@@ -108,7 +108,7 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 2
+    frame_width = 1
 
     # Defines color of the frame around the notification window.
     frame_color = "#eeeeee"
@@ -271,7 +271,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 12
+    corner_radius = 4
 
     # Define which corners to round when drawing the window. If the corner radius
     # is set to 0 this option will be ignored.
@@ -341,16 +341,16 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#2b303b"
-    foreground = "#888888"
-    timeout = 10
+    background = "#000000"
+    foreground = "#ffffff"
+    timeout = 5
     # Icon for notifications with low urgency
     default_icon = dialog-information
 
 [urgency_normal]
-    background = "#2b303b"
+    background = "#000000"
     foreground = "#ffffff"
-    timeout = 10
+    timeout = 5
     override_pause_level = 30
     # Icon for notifications with normal urgency
     default_icon = dialog-information
@@ -359,7 +359,7 @@
     background = "#900000"
     foreground = "#ffffff"
     frame_color = "#ff0000"
-    timeout = 0
+    timeout = 15
     override_pause_level = 60
     # Icon for notifications with critical urgency
     default_icon = dialog-warning

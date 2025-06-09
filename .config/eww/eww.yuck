@@ -1,0 +1,13 @@
+(defwidget activate-linux []
+  (box
+    :orientation "v"
+    :halign "start"
+    :valign "start"
+    (label :xalign 0 :markup "<span font_size=\"large\">激活 Arch Linux</span>")
+    (label :xalign 0 :text "转到“设置”以激活 Arch Linux。")))
+
+(defwindow activate-linux
+  :monitor 0
+  :stacking "fg"
+  :geometry (geometry :x "8px" :y "32px" :width "250px" :anchor "bottom right")
+  (activate-linux))
