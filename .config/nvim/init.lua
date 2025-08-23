@@ -5,6 +5,7 @@ vim.cmd.set "softtabstop=2"
 vim.cmd.colorscheme "catppuccin-mocha"
 vim.opt.termguicolors = true
 vim.notify = require("notify")
+vim.cmd.set "relativenumber"
 
 require('nvim-treesitter.configs').setup {
   ensure_installed = { "c", "lua", "vim", "cpp", "python", "markdown", "javascript", "html", "css", "typescript", "json", "json5", "toml", "vue", "yaml", "xml" },
