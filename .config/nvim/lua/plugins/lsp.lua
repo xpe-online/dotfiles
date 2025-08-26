@@ -10,7 +10,6 @@ return{
   },
   {
     "neovim/nvim-lspconfig",
-    dependencies = { 'saghen/blink.cmp' },
     opts = {
       servers = {
 	lua_ls = {},
@@ -75,6 +74,7 @@ return{
     'superhtml',
     'ts_ls',
     'quick_lint_js',
-    'lua_ls'
+    'lua_ls',
+    'pyright' 
   }
 } 
