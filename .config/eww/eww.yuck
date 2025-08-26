@@ -8,6 +8,8 @@
 
 (defwindow activate-linux
   :monitor 0
-  :stacking "fg"
+  :namespace "eww-activate-linux"
+  :stacking "overlay"
   :geometry (geometry :x "8px" :y "32px" :width "250px" :anchor "bottom right")
+  :focusable false ;
   (activate-linux))
