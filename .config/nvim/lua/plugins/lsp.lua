@@ -70,11 +70,20 @@ return{
     opts_extend = { "sources.default" },
     lazy = false
   },
+  {
+    "rachartier/tiny-inline-diagnostic.nvim",
+    event = "VeryLazy",
+    priority = 1000,
+    config = function()
+        require('tiny-inline-diagnostic').setup()
+        vim.diagnostic.config({ virtual_text = false }) -- Disable default virtual text
+    end
+  },
   vim.lsp.enable {
     'superhtml',
     'ts_ls',
     'quick_lint_js',
     'lua_ls',
     'pyright' 
-  }
-} 
+  },
+ } 
