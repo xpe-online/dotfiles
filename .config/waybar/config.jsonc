@@ -88,7 +88,7 @@
   "custom/power": {
     "format": "⏻",
     "tooltip": false,
-    "on-click": "bash -c 'pkill -x wofi || wofi --show=dmenu -p 电源选项 <<< \"关机\n重启\n挂起\n休眠\" | xargs -I{} bash -c \"[[ {} = 关机 ]] && shutdown now || [[ {} = 重启 ]] && reboot || [[ {} = 挂起 ]] && systemctl suspend || [[ {} = 休眠 ]] && systemctl hibernate\"'"
+    "on-click": "rofi -show p -modi p:rofi-power-menu"
   },
   "hyprland/workspaces": {
     "show-special": true

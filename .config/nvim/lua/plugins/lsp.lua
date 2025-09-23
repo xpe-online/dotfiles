@@ -66,6 +66,7 @@ return{
     'ts_ls',
     'quick_lint_js',
     'lua_ls',
-    'pyright' 
+    'pyright',
+    'clangd'
   },
  } 
