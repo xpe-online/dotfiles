@@ -1,12 +1,13 @@
 require("config.lazy")
 
-vim.cmd.set "shiftwidth=2"
-vim.cmd.set "softtabstop=2"
+vim.o.shiftwidth=2
+vim.o.softtabstop = 2
 vim.cmd.colorscheme "catppuccin-mocha"
 vim.opt.termguicolors = true
 vim.notify = require("notify")
-vim.cmd.set "relativenumber"
+vim.o.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
+vim.g.mapleader = ' '
 
 local lastplace = vim.api.nvim_create_augroup("LastPlace", {})
 vim.api.nvim_clear_autocmds({ group = lastplace })
@@ -250,4 +251,16 @@ require("tiny-inline-diagnostic").setup({
 
     -- List of filetypes to disable the plugin for
     disabled_ft = {}
+})
+
+vim.api.nvim_create_autocmd({'BufEnter', 'BufWinEnter'}, {
+  pattern = {"*.hl", "hypr*.conf"},
+  callback = function(event)
+  print(string.format("starting hyprls for %s", vim.inspect(event)))
+  vim.lsp.start {
+    name = "hyprlang",
+    cmd = {"hyprls"},
+    root_dir = vim.fn.getcwd(),
+  }
+  end
 })
