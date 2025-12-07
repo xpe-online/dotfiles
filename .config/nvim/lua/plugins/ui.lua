@@ -58,5 +58,9 @@ return{
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' }
+  },
+  {
+    'brenoprata10/nvim-highlight-colors',
+    opts = {}
   }
 }

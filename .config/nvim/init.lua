@@ -253,6 +253,8 @@ require("tiny-inline-diagnostic").setup({
     disabled_ft = {}
 })
 
+require('nvim-highlight-colors').setup({})
+
 vim.api.nvim_create_autocmd({'BufEnter', 'BufWinEnter'}, {
   pattern = {"*.hl", "hypr*.conf"},
   callback = function(event)
