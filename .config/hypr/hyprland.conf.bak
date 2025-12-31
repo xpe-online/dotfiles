@@ -226,11 +226,10 @@ bind = ALT, F4, killactive,
 bind = SUPER, R, exec, $menu
 bind = , Print, exec, grim -t ppm - | satty --filename - --fullscreen --output-filename ~/workstation/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png --copy-command wl-copy
 bind = SHIFT, F7, exec, hyprpicker -a -f hex
-bind = SUPER, e, exec, [size 860 480; float on] kitty
+bind = SUPER, e, exec, [size 800 450; float] kitty
 bind = , code:148, exec, rofi -show calc
 bind = SUPER, code:60, exec, rofi -show emoji
 bind = , code:163, exec, viagee
-# Cliphist && Wofi Bindings
 bind = SUPER, V, exec, rofi -modi clipboard:$HOME/.config/rofi/cliphist-rofi-img -show clipboard -show-icons
 # Layout binds
 
@@ -314,35 +313,22 @@ bindl = , XF86AudioPause, exec, playerctl play-pause
 bindl = , XF86AudioPlay, exec, playerctl play-pause
 bindl = , XF86AudioPrev, exec, playerctl previous
 
-
-windowrule {
-  name = Minecraft
-  opacity = 2
-  match:class = (.*)(Minecraft)(.*)
-}
-
-windowrule {
-  name = Counter-Strike-2
-  opacity = 2
-  match:class = (cs2)
-}
-
-windowrule {
-  name = FSearch
-  float = on
-  match:class = (fsearch)
-}
-
-windowrule {
-  name = neuro-collection
-  float = on
-  no_blur = on
-  no_focus = on
-  no_shadow = on
-  border_size = 0
-  match:class = com-group_finity-mascot-Main
-}
-
+# Cliphist && Wofi Bindings
+windowrulev2 = float, class:^(com.github.hluk.copyq)$
+windowrule = opacity 2, class:(.*)(Minecraft)(.*)
+windowrule = opacity 2, class:(cs2)
+windowrulev2 = float, class:^(showmethekey-gtk)$
+windowrulev2 = size 360 80, class:^(showmethekey-gtk)$
+windowrulev2 = move 800 800, class:^(showmethekey-gtk)$
+windowrulev2 = noinitialfocus, class:^(showmethekey-gtk)$
+windowrulev2 = pin, class:^(showmethekey-gtk)$
+windowrulev2 = pin, class:^(cloudmusic.exe)$
+windowrulev2 = float, class:(fsearch)
+windowrule = float, class:com-group_finity-mascot-Main
+windowrule = noblur, class:com-group_finity-mascot-Main
+windowrule = nofocus, class:com-group_finity-mascot-Main
+windowrule = noshadow, class:com-group_finity-mascot-Main
+windowrule = noborder, class:com-group_finity-mascot-Main
 
 # Minimize Windows Special Workspace
 bind = SUPER SHIFT, M, movetoworkspace, special:Minimize
@@ -361,24 +347,10 @@ bind = SUPER, M, togglespecialworkspace, Minimize
 # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
 
 # Ignore maximize requests from apps. You'll probably like this.
-windowrule {
-  name = windowrule-8
-  suppress_event = maximize
-  match:class = .*
-}
+windowrulev2 = suppressevent maximize, class:.*
 
 # Fix some dragging issues with XWayland
-windowrule {
-  name = windowrule-9
-  no_focus = on
-  match:class = ^$
-  match:title = ^$
-  match:xwayland = 1
-  match:float = 1
-  match:fullscreen = 0
-  match:pin = 0
-}
-
+windowrulev2 = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
 
 # .config/hypr/hyprland.conf
 
